@@ -40,8 +40,28 @@ class Inventario{
             aux=aux.siguiente;
         }
         return res;
-      }
+    }
+    listadoInverso(){
+        let res = "";
+        let aux = this.primero;
+        let aux2;
+        while(aux!=null){
+          aux2 = res;
+          res = "";
+          res += aux.info() + ""+ aux2;  
+          aux = aux.siguiente
+        }
+        return res;
+    }
     buscar(codigo){
-        
+        let aux = this.primero;
+        while(aux!= null){
+            if(aux.codigo==codigo){
+                return aux;
+            }
+            else{
+                aux= aux.siguiente;
+            }
+        }
     }
 }
