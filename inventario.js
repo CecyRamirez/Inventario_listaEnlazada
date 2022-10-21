@@ -3,7 +3,7 @@ class Inventario{
         this.primero=null;
     }
 
-    agregar(nuevo){ // LISTA ENLAZADA LISTO
+    agregar(nuevo){ 
         if (this.primero==null)
             this.primero=nuevo;
         else{
