@@ -14,6 +14,29 @@ class Inventario{
         }
         console.log(nuevo);
     }
+    insertar(nuevo, posicion){
+        let aux = this.primero;
+        let posCount= 2;
+        if(posicion==1){
+            nuevo.siguiente = aux;
+            this.primero= nuevo;
+            console.log(this.primero.siguiente);
+            return;
+        }
+        while(aux!=null){
+            if(posCount==posicion){
+                nuevo.siguiente = aux.siguiente;
+                aux.siguiente= nuevo;
+                aux = aux.siguiente;
+                console.log(aux);
+                return;
+            }
+            else{
+                posCount++;
+                aux=aux.siguiente
+            }
+        } 
+    }
     eliminar(codigo){
         if(this.primero.codigo==codigo){
             this.primero=this.primero.siguiente;
